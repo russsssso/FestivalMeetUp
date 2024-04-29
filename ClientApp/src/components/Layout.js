@@ -4,11 +4,17 @@ import { NavMenu } from './NavMenu';
 
 export class Layout extends Component {
   static displayName = Layout.name;
-
-  render() {
+    
+    render() {
+        const url = window.location.pathname;
+        console.log(url);
     return (
-      <div>
-        <NavMenu />
+        <div>
+            {
+                url !== "/login-test" && 
+            (
+        <NavMenu />)
+            }
         <Container>
           {this.props.children}
         </Container>
