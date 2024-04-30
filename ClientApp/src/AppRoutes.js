@@ -1,29 +1,37 @@
-import ApiAuthorzationRoutes from './components/api-authorization/ApiAuthorizationRoutes';
-import { Counter } from "./components/Counter";
-import { FetchData } from "./components/FetchData";
-import { Home } from "./components/Home";
-import { LoginTest } from "./components/LoginTest";
+import {Events} from "./components/Events";
+import {Post} from "./components/Post";
+import {Feed} from "./components/Feed";
+import LoginTest from "./components/LoginTest";
+import {Profile} from "./components/Profile";
+import {Messages} from "./components/Messages";
 
 const AppRoutes = [
-  {
+    {
         index: true,
-    //requireAuth: true,
-    element: <Home />
-  },
-  {
-    path: '/counter',
-    element: <Counter />
-  },
-  {
-    path: '/fetch-data',
-    requireAuth: true,
-    element: <FetchData />
+        //requireAuth: true,
+        element: <Feed/>
     },
-   {
-    path: '/login-test',
-    element: <LoginTest />
+    {
+        path: '/events',
+        element: <Events/>
     },
-  ...ApiAuthorzationRoutes
+    {
+        path: '/post',
+        requireAuth: true,
+        element: <Post/>
+    },
+    {
+        path: '/profile',
+        element: <Profile/>
+    },
+    {
+        path: '/messages',
+        element: <Messages/>
+    },
+    {
+        path: '/login-test',
+        element: <LoginTest/>
+    }
 ];
 
 export default AppRoutes;

@@ -1,26 +1,84 @@
-import React, { Component } from 'react';
+import React, {useState} from 'react';
+import {Button, Input} from 'antd';
 
-export class LoginTest extends Component {
-  static displayName = LoginTest.name;
+const LoginTest = () => {
 
-  render() {
+
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
     return (
-      <div>
-        <h1>Hello, world!</h1>
-        <p>Welcome to your new single-page application, built with:</p>
-        <ul>
-          <li><a href='https://get.asp.net/'>ASP.NET Core</a> and <a href='https://msdn.microsoft.com/en-us/library/67ef8sbd.aspx'>C#</a> for cross-platform server-side code</li>
-          <li><a href='https://facebook.github.io/react/'>React</a> for client-side code</li>
-          <li><a href='http://getbootstrap.com/'>Bootstrap</a> for layout and styling</li>
-        </ul>
-        <p>To help you get started, we have also set up:</p>
-        <ul>
-          <li><strong>Client-side navigation</strong>. For example, click <em>Counter</em> then <em>Back</em> to return here.</li>
-          <li><strong>Development server integration</strong>. In development mode, the development server from <code>create-react-app</code> runs in the background automatically, so your client-side resources are dynamically built on demand and the page refreshes when you modify any file.</li>
-          <li><strong>Efficient production builds</strong>. In production mode, development-time features are disabled, and your <code>dotnet publish</code> configuration produces minified, efficiently bundled JavaScript files.</li>
-        </ul>
-        <p>The <code>ClientApp</code> subdirectory is a standard React application based on the <code>create-react-app</code> template. If you open a command prompt in that directory, you can run <code>npm</code> commands such as <code>npm test</code> or <code>npm install</code>.</p>
-      </div>
+        <div style={{display: "flex", flexDirection: "row", height: "100%"}}>
+            <div style={{display: "flex", width: "50%", height: "100%"}}>
+                <img width="100%" src="/festival.jpg" alt="poza"/>
+                <p style={{
+                    position: "absolute",
+                    fontSize: "60px",
+                    fontWeight: "bold",
+                    top: "50%",
+                    left: "25%",
+                    color: "white",
+                    transform: "translate(-50%, -50%)",
+                    textAlign: "center"
+                }}>Welcome to Festival Meet-Up</p>
+            </div>
+            <div style={{
+                display: "flex",
+                flexDirection: "column",
+                width: "50%",
+                height: "100%",
+                
+            }}>
+                <div style={{
+                    margin: "20%",
+                    width: "60%",
+                    height: "80%",
+                    display: "flex",
+                    flexDirection: "column",
+                    justifyContent: "center",
+                    
+                }}>
+                    <h1>Sign In</h1>
+                    <p style={{color: "gray", marginTop: "20px"}}>Enter your email and password to login to your
+                        account</p>
+                    <Input
+                        style={{marginTop: "20px", padding: "10px", borderRadius: "5px", border: "1px solid lightgray"}}
+                        type="text"
+                        placeholder="Email Address"
+                        allowClear
+                        value={email}
+                        onChange={(e) => setEmail(e.target.value)}/>
+                    <Input
+                        style={{marginTop: "20px", padding: "10px", borderRadius: "5px", border: "1px solid lightgray"}}
+                        type="password"
+                        placeholder="Password"
+                        allowClear
+                        value={password}
+                        onChange={(e) => setPassword(e.target.value)}/>
+                    <Button
+                        style={{
+                            marginTop: "20px",
+                            height: "40px",
+                            borderRadius: "5px",
+                            border: "1px solid lightgray",
+                            backgroundColor: "gray",
+                            color: "white"
+                        }}>Sign In
+                    </Button>
+                    <p
+                        style={{
+                            marginTop: "20px",
+                            color: "black",
+                            textAlign: "center",
+                        }}
+                    >
+                        Want to create an account? &nbsp;
+                        <a href="/register">Sign Up</a>
+                    </p>
+
+                </div>
+            </div>
+        </div>
     );
-  }
+
 }
+export default LoginTest;

@@ -26,13 +26,5 @@ export const ApplicationPaths = {
   ApiAuthorizationClientConfigurationUrl: `_configuration/${ApplicationName}`,
   ApiAuthorizationPrefix: prefix,
   Login: `/login-test`,
-  LoginFailed: `${prefix}/${LoginActions.LoginFailed}`,
-  LoginCallback: `${prefix}/${LoginActions.LoginCallback}`,
-  Register: `${prefix}/${LoginActions.Register}`,
-  Profile: `${prefix}/${LoginActions.Profile}`,
-  LogOut: `${prefix}/${LogoutActions.Logout}`,
-  LoggedOut: `${prefix}/${LogoutActions.LoggedOut}`,
-  LogOutCallback: `${prefix}/${LogoutActions.LogoutCallback}`,
-  IdentityRegisterPath: 'Identity/Account/Register',
-  IdentityManagePath: 'Identity/Account/Manage'
+  
 };
