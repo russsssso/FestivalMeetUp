@@ -1,7 +1,7 @@
 import React from 'react';
-import { Login } from './Login'
-import { Logout } from './Logout'
+import { Logout } from './Logout';
 import { ApplicationPaths, LoginActions, LogoutActions } from './ApiAuthorizationConstants';
+import  LoginTest  from "../LoginTest";
 
 const ApiAuthorizationRoutes = [
   {
@@ -39,7 +39,7 @@ const ApiAuthorizationRoutes = [
 ];
 
 function loginAction(name){
-  return <Login action={name}></Login>;
+  return <LoginTest action={name}></LoginTest>;
 }
 
 function logoutAction(name) {

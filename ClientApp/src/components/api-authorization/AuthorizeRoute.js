@@ -1,8 +1,8 @@
-import React from 'react'
+﻿import React from 'react'
 import { Component } from 'react'
 import { Navigate } from 'react-router-dom'
-import { ApplicationPaths, QueryParameterNames } from './ApiAuthorizationConstants'
 import authService from './AuthorizeService'
+import {ApplicationPaths, QueryParameterNames} from "./ApiAuthorizationConstants";
 
 export default class AuthorizeRoute extends Component {
   constructor(props) {
