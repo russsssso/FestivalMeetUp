@@ -42,45 +42,45 @@ const layoutStyle = {
 const items = [
     {
         key: '1',
-        icon: <HomeOutlined style={{fontSize: "25px"}}/>,
+        icon: <HomeOutlined style={{fontSize: "1em"}}/>,
         label: (
-            <Link style={{fontSize: "20px"}} href="/">
+            <Link style={{fontSize: "1em"}} href="/">
                 Activity Feed
             </Link>
         ),
     },
     {
         key: '2',
-        icon: <SearchOutlined style={{fontSize: "25px"}}/>,
+        icon: <SearchOutlined style={{fontSize: "1em"}}/>,
         label: (
-            <Link style={{fontSize: "20px"}} href="/events">
+            <Link style={{fontSize: "1em"}} href="/events">
                 Events
             </Link>
         ),
     },
     {
         key: '3',
-        icon: <PlusSquareOutlined style={{fontSize: "25px"}}/>,
+        icon: <PlusSquareOutlined style={{fontSize: "1em"}}/>,
         label: (
-            <Link style={{fontSize: "20px"}} href="/post">
+            <Link style={{fontSize: "1em"}} href="/post">
                 New post
             </Link>
         ),
     },
     {
         key: '4',
-        icon: <MessageOutlined style={{fontSize: "25px"}}/>,
+        icon: <MessageOutlined style={{fontSize: "1em"}}/>,
         label: (
-            <Link style={{fontSize: "20px"}} href="/messages">
+            <Link style={{fontSize: "1em"}} href="/messages">
                 Messages
             </Link>
         ),
     },
     {
         key: '5',
-        icon: <Avatar size={25} icon={<UserOutlined/>}/>,
+        icon: <Avatar size={15} icon={<UserOutlined/>}/>,
         label: (
-            <Link style={{fontSize: "20px"}} href="/profile">
+            <Link style={{fontSize: "1em"}} href="/profile">
                 Profile
             </Link>
         ),
@@ -158,12 +158,12 @@ const AppLayout = (props) => {
                                             paddingRight: 200,
                                             borderRight: "none",
                                             backgroundColor: 'white',
-
                                             color: 'black',
                                         }}
                                     >
                                         {items?.map((item) => (
-                                            <Menu.Item key={item?.key} icon={item?.icon}>
+                                            <Menu.Item style={{
+                                            justifyContent: 'start', display: 'flex'}} key={item?.key} icon={item?.icon}> 
                                                 {item?.label}
                                             </Menu.Item>
                                         ))}
