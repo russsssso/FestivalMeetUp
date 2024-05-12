@@ -12,7 +12,7 @@ const LoginTest = () => {
                 <img width="100%" src="/festival.jpg" alt="poza"/>
                 <p style={{
                     position: "absolute",
-                    fontSize: "60px",
+                    fontSize: "3em",
                     fontWeight: "bold",
                     top: "50%",
                     left: "25%",
