@@ -5,6 +5,24 @@ import {UserOutlined} from "@ant-design/icons";
 
 export class Profile extends Component {
     static displayName = Profile.name;
+    state = {
+        profile: {}
+    };
+
+    componentDidMount() {
+        fetch('https://localhost:7179/User/profile')
+            .then(response => {
+                console.log(response);
+                return response.json();
+            })
+            .then(data => {
+                console.log(data);
+                this.setState({ profile: data });
+            })
+            .catch((error) => {
+                console.error('Error:', error);
+            });
+    }
 
     render() {
         return (
@@ -13,15 +31,15 @@ export class Profile extends Component {
                     <Avatar size={200} icon={<UserOutlined/>}/>
                 </div>
                 <div>
-                    <div style={{textAlign: "center", fontSize: "30px", marginBottom: '30px'}}>Username</div>
+                    <div style={{textAlign: "center", fontSize: "30px", marginBottom: '30px'}}>{this.state.profile.username}</div>
                 </div>
                 <div style={{display: "flex", fontWeight: "700", fontSize: "18px", justifyContent: "center"}}>
-                    <div style={{marginRight: "45px",marginLeft:"45px"}}>9 posts</div>
-                    <div style={{marginRight: "45px",marginLeft:"45px"}}>10k followers</div>
-                    <div style={{marginRight: "45px",marginLeft:"45px"}}>5063 following</div>
+                    <div style={{marginRight: "45px",marginLeft:"45px"}}>{this.state.profile.posts} posts</div>
+                    <div style={{marginRight: "45px",marginLeft:"45px"}}>{this.state.profile.followers} followers</div>
+                    <div style={{marginRight: "45px",marginLeft:"45px"}}>{this.state.profile.following} following</div>
                 </div>
                 <div style={{textAlign: "center", fontSize: "20px", marginTop: '20px'}}>
-                    This is the bio / description.
+                    {this.state.profile.description}
                 </div>
 
                 <div style={{display: "flex", justifyContent: "center", marginTop: '20px'}}>
